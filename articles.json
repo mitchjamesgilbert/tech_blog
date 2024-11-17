@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "title": "My First Blog Post",
+        "content": "This is the content of my first blog post.",
+        "date": "2024-11-17"
+    },
+    {
+        "id": 2,
+        "title": "Exploring Flask",
+        "content": "Flask is a lightweight Python web framework.",
+        "date": "2024-11-18"
+    }
+]

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ article.title }}</h1>
+
+<p><strong>Published on:</strong> {{ article.date }}</p>
+
+<div>
+    <p>{{ article.content }}</p>
+</div>
+
+<a href="{{ url_for('routes.posts') }}">Back to Posts</a>
+{% endblock %}

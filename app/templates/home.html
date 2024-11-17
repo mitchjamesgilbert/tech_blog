@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Blog</title>
-</head>
-<body>
-    <h1>Welcome to the home page</h1>
-    <p>This is the homepage of the Flask app</p>
-    <p><a href="/about">Go to about</a></p>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Hello, World!</h1>
+<p>This is the homepage</p>
+{% endblock %}
