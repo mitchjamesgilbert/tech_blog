@@ -1,14 +1,32 @@
 [
     {
-        "id": 1,
-        "title": "My First Blog Post",
-        "content": "This is the content of my first blog post.",
-        "date": "2024-11-17"
+        "id": 2,
+        "title": "Exploring Flask",
+        "content": "Flask is a lightweight Python web framework. I have made an edit",
+        "date": "2024-11-18"
     },
     {
         "id": 2,
-        "title": "Exploring Flask",
-        "content": "Flask is a lightweight Python web framework.",
+        "title": "Hello, it is a test",
+        "content": "This is the content",
+        "date": "2024-12-08"
+    },
+    {
+        "id": 3,
+        "title": "Hello, it is a test",
+        "content": "This is the content",
+        "date": "2024-12-08"
+    },
+    {
+        "id": 4,
+        "title": "Hello, here is a new post",
+        "content": "Look I'm posting",
+        "date": "2024-12-12"
+    },
+    {
+        "id": 5,
+        "title": "Look, it is my latest post",
+        "content": "WOw, new things!",
         "date": "2024-11-18"
     }
 ]

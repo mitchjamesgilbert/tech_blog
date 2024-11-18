@@ -3,10 +3,16 @@
 {% block title %}Posts{% endblock %}
 
 {% block content %}
-<h1>Blog Posts</h1>
-<ul>
-    {% for article in articles %}
-        <li><a href="{{ url_for('routes.post', article_id=article['id']) }}">{{ article['title'] }}</a></li>
-    {% endfor %}
-</ul>
+<div class="container mt-5">
+    <h1 class="mb-4 text-center">Blog Posts</h1>
+    <ul class="list-group">
+        {% for article in articles %}
+            <li class="list-group-item">
+                <a href="{{ url_for('routes.post', article_id=article['id']) }}" class="text-decoration-none">
+                    {{ article['title'] }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
 {% endblock %}
