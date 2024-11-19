@@ -5,21 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}My Blog{% endblock %}</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/darkly/bootstrap.min.css">
+    <style>
+        /* Sidebar styling */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 220px;
+            height: 100vh;
+            background-color: #343a40;
+            padding-top: 20px;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: block;
+            padding: 10px;
+        }
+        .sidebar a:hover {
+            color: #0d6efd;
+            background-color: #495057;
+            border-radius: 5px;
+        }
+
+        /* Adjust main content to account for sidebar */
+        .main-content {
+            margin-left: 220px; /* Same as the sidebar width */
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="/">Home</a> |
-            <a href="/posts">Posts</a> |
-            <a href="/about">About</a>
-        </nav>
+    <div class="sidebar">
+        <h4 class="text-center text-white">My Blog</h4>
         <hr>
-    </header>
-    <main>
+        <a href="/">Home</a>
+        <a href="/posts">Posts</a>
+        <a href="/about">About</a>
+    </div>
+
+    <div class="main-content">
         {% block content %}{% endblock %}
-    </main>
-    <footer>
-        <hr>
+    </div>
+
+    <footer class="text-center py-3">
         <p>&copy; 2024 My Blog</p>
     </footer>
 </body>

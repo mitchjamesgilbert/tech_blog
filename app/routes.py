@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash, session, abort
+from flask import Blueprint, render_template, request, redirect, url_for, flash, session
 from .utilities import load_articles, save_articles
 from .auth import admin_required, USERS
 from .models import BlogPost
@@ -15,10 +15,22 @@ def home():
 def about():
     return render_template('about.html')
 
-@bp.route('/posts')
+@bp.route('/posts', methods=['GET'])
 def posts():
-    articles = load_articles()
+    search_query = request.args.get('search', '').strip()
+    if search_query:
+        # Filter posts based on the search query
+        articles = BlogPost.query.filter(
+            (BlogPost.title.ilike(f"%{search_query}%")) |
+            (BlogPost.content.ilike(f"%{search_query}%")) |
+            (BlogPost.tags.ilike(f"%{search_query}%"))
+        ).all()
+    else:
+        # Fetch all posts if no search query is provided
+        articles = BlogPost.query.all()
+    
     return render_template('posts.html', articles=articles)
+
 
 @bp.route('/post/<int:article_id>')
 def post(article_id):

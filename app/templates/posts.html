@@ -1,18 +1,57 @@
 {% extends "base.html" %}
 
-{% block title %}Posts{% endblock %}
+{% block title %}Blog Posts{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <h1 class="mb-4 text-center">Blog Posts</h1>
-    <ul>
+<style>
+    .card {
+        border: 1px solid #292828;
+        transition: transform 0.2s;
+    }
+    .card:hover {
+        transform: scale(1.02);
+    }
+    a.text-decoration-none {
+        text-decoration: none;
+    }
+</style>
+<div class="container mt-5" style="max-width: 800px;">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Blog Posts</h1>
+    </div>
+    <form method="GET" action="{{ url_for('routes.posts') }}" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="search" class="form-control" placeholder="Search posts..." value="{{ request.args.get('search', '') }}">
+            <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+    </form>
+
+    <div class="row row-cols-1 g-3">
         {% for article in articles %}
-            <li>
-                <a href="{{ url_for('routes.post', article_id=article.id) }}">{{ article.title }}</a>
-                <small>Tags: {{ article.get_tags() | join(', ') }}</small>
-            </li>
+            <div class="col">
+                <a href="{{ url_for('routes.post', article_id=article.id) }}" class="text-decoration-none">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">{{ article.title }}</h5>
+                            <p class="card-text text-muted small">
+                                {{ article.content[:200] }}...
+                            </p>
+                            <p class="card-text small text-muted">
+                                <strong>Published:</strong> {{ article.date_posted.strftime('%Y-%m-%d') }}
+                            </p>
+                            <p class="card-text">
+                                <strong>Tags:</strong> 
+                                {% if article.get_tags() %}
+                                    {{ ', '.join(article.get_tags()) }}
+                                {% else %}
+                                    No tags
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
         {% endfor %}
-    </ul>
-    
+    </div>
 </div>
 {% endblock %}

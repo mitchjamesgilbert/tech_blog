@@ -14,6 +14,7 @@ def get_posts():
             "title": article.title,
             "content": article.content,
             "date_posted": article.date_posted.strftime('%Y-%M-%d'),
+            "date_updated": article.date_updated.strftime('%Y-%M-%d'),
             "tags": article.tags.split(",") if article.tags else []
         }
         for article in articles
@@ -27,6 +28,7 @@ def get_post(article_id):
         "title": article.title,
         "content": article.content,
         "date_posted": article.date_posted.strftime('%Y-%M-%d'),
+        "date_updated": article.date_updated.strftime('%Y-%M-%d'),
         "tags": article.tags.split(",") if article.tags else []
     })
 
@@ -36,7 +38,8 @@ def create_post():
     new_article = BlogPost(
         title=data['title'],
         content=data['content'],
-        date_posted=datetime.now(),
+        date_posted=datetime.now().replace(microsecond=0),
+        date_updated = datetime.now().replace(microsecond=0),
         tags=",".join(data.get('tags', []))
     )
     db.session.add(new_article)
@@ -55,6 +58,7 @@ def update_post(post_id):
         post.content = data['content']
     if 'tags' in data:
         post.tags = ",".join(data['tags'])
+    post.date_updated = datetime.now().replace(microsecond=0)
     
     db.session.commit()
     return jsonify({
@@ -64,9 +68,10 @@ def update_post(post_id):
             "title": post.title,
             "content": post.content,
             "date_posted": post.date_posted.strftime('%Y-%m-%d'),
+            "date_updated": post.date_updated.strftime('%Y-%m-%d'),
             "tags": post.tags.split(",") if post.tags else []
         }
-    })
+    }), 200
 
 @api_bp.route('/posts/<int:post_id>', methods=['DELETE'])
 def delete_post(post_id):

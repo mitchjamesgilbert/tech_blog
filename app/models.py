@@ -6,6 +6,7 @@ class BlogPost(db.Model):
     title = db.Column(db.String(100), nullable=False)
     content = db.Column(db.Text, nullable=False)
     date_posted = db.Column(db.DateTime, default=datetime.now())
+    last_updated = db.Column(db.DateTime, default=datetime.now(), onupdate=datetime.now)
     tags = db.Column(db.String(200), nullable=True)
 
     def __repr__(self):
