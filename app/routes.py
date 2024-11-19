@@ -39,7 +39,6 @@ def edit_post(article_id):
     if request.method == 'POST':
         article.title = request.form['title']
         article.content = request.form['content']
-        article.date_posted = datetime.strptime(request.form['date'], '%Y-%m-%d')
         article.tags = ",".join(request.form.getlist('tags'))
         db.session.commit()
         return redirect(url_for('routes.admin'))
@@ -63,7 +62,7 @@ def new_post():
         new_article = BlogPost(
             title=request.form['title'],
             content=request.form['content'],
-            date_posted = datetime.strptime(request.form['date'], '%Y-%m-%d'),
+            date_posted = datetime.now(),
             tags=",".join(request.form.getlist('tags'))
         )
         db.session.add(new_article)
