@@ -2,30 +2,35 @@
     {
         "id": 1,
         "title": "Exploring Flask",
+        "tags": ["tech", "networking"],
         "content": "Flask is a lightweight Python web framework. I have made an edit to the article!",
         "date": "2024-11-18"
     },
     {
         "id": 2,
         "title": "Hello, it is a test",
+        "tags": ["tech", "networking"],
         "content": "This is the content",
         "date": "2024-12-08"
     },
     {
         "id": 3,
         "title": "Hello, it is a test",
+        "tags": ["tech", "networking"],
         "content": "This is the content",
         "date": "2024-12-08"
     },
     {
         "id": 4,
         "title": "Hello, here is a new post",
+        "tags": ["tech", "networking"],
         "content": "Look I'm posting",
         "date": "2024-10-12"
     },
     {
         "id": 5,
         "title": "Look, it is my latest post",
+        "tags": ["tech", "networking"],
         "content": "WOw, new things!",
         "date": "2024-11-18"
     }
