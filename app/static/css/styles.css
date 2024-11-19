@@ -4,7 +4,18 @@
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
     height: 100vh; /* Full screen height */
+    width: 100vw;
     text-align: center; /* Center text */
+    background: radial-gradient(
+        circle,
+        rgba(0, 255, 0, 0.15) 0%, /* Bright green center */
+        rgba(0, 0, 0, 0.9) 50%,  /* Fade to dark */
+        rgba(0, 0, 0, 1) 100%    /* Fully black edges */
+    );
+}
+
+.container-fluid {
+    --bs-gutter-x: 0;
 }
 
 /* Terminal-style page title */
@@ -22,14 +33,17 @@
 
 /* Navbar styling */
 .navbar {
-    background-color: #1f1d1d !important; /* Custom dark color for the navbar */
-    border-bottom: 1px solid #bdc2bd; /* Subtle bottom border */
+    background-color: #000000 !important; /* Custom dark color for the navbar */
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .navbar-brand {
-    color: #00ff00 !important; /* Terminal green for the brand text */
+    color: #00ff00 !important; /* Terminal green for the brand */
     text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
-    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.8rem; /* Larger brand text */
+    margin-right: 2rem; /* Add spacing from navbar links */
 }
 
 .navbar-brand:hover {
@@ -37,11 +51,30 @@
 }
 
 .nav-link {
-    color: #bdc2bd !important; /* Match sidebar link color */
+    color: #bdc2bd !important; /* Default muted color */
+    transition: color 0.2s ease, text-shadow 0.2s ease; /* Smooth hover effect */
+    font-size: 1.2rem; /* Larger text for nav links */
+    margin: 0 1rem; /* Space between nav items */
 }
 
 .nav-link:hover {
-    color: #00ff00 !important; /* Match hover color */
+    color: #00ff00 !important; /* Terminal green on hover */
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+}
+
+/* Active link styling */
+.nav-link.active {
+    color: #00ff00 !important;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+}
+
+/* Navbar toggler (for mobile views) */
+.navbar-toggler {
+    border-color: #00ff00; /* Green border for toggler */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(0, 255, 0, 1)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); /* Green lines */
 }
 
 /* Typewriter text */

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const text = "Hello, World!"; // Text to type out
     const typingSpeed = 200; // Milliseconds per character
-    const cursorBlinkSpeed = 400; // Milliseconds for cursor blink
+    const cursorBlinkSpeed = 500; // Milliseconds for cursor blink
 
     const textElement = document.getElementById("typewriter-text");
     const cursorElement = document.getElementById("cursor");
@@ -14,9 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
             textElement.textContent += text.charAt(index);
             index++;
             setTimeout(typeText, typingSpeed);
-        } else {
-            cursorElement.style.display = "none"; // Hide cursor after typing
-        }
+        } 
     }
 
     // Function to make the cursor blink
