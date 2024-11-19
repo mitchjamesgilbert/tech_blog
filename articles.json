@@ -1,8 +1,8 @@
 [
     {
-        "id": 2,
+        "id": 1,
         "title": "Exploring Flask",
-        "content": "Flask is a lightweight Python web framework. I have made an edit",
+        "content": "Flask is a lightweight Python web framework. I have made an edit to the article!",
         "date": "2024-11-18"
     },
     {
@@ -21,7 +21,7 @@
         "id": 4,
         "title": "Hello, here is a new post",
         "content": "Look I'm posting",
-        "date": "2024-12-12"
+        "date": "2024-10-12"
     },
     {
         "id": 5,
