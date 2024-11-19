@@ -1,0 +1,45 @@
+/* Center content for the homepage */
+.homepage-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full screen height */
+    text-align: center; /* Center text */
+}
+
+/* Terminal-style page title */
+.terminal-green-title {
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+    transition: text-shadow 0.2s ease; /* Smooth transition for the glow effect */
+}
+
+/* Glowing effect on hover */
+.terminal-green-title:hover {
+    text-shadow: 0 0 15px #00ff00, 0 0 30px #00ff00, 0 0 45px #00ff00;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #1f1d1d !important; /* Custom dark color for the navbar */
+    border-bottom: 1px solid #bdc2bd; /* Subtle bottom border */
+}
+
+.navbar-brand {
+    color: #00ff00 !important; /* Terminal green for the brand text */
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.navbar-brand:hover {
+    color: #bdc2bd !important; /* Softer green hover effect */
+}
+
+.nav-link {
+    color: #bdc2bd !important; /* Match sidebar link color */
+}
+
+.nav-link:hover {
+    color: #00ff00 !important; /* Match hover color */
+}
