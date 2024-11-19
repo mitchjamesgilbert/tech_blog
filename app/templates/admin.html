@@ -21,7 +21,10 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <div>
                         <strong>{{ article.title }}</strong>
-                        <p class="mb-1">{{ article.content }}</p>
+                        <!-- Limit content preview to 200 characters -->
+                        <p class="mb-1">
+                            {{ article.content[:200] }}{% if article.content|length > 200 %}...{% endif %}
+                        </p>
                         <small class="text-muted">Posted on {{ article.date_posted.strftime('%Y-%m-%d') }}</small>
                         <br>
                         <small><strong>Tags:</strong> 

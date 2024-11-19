@@ -19,16 +19,20 @@
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="terminal-green-title">Blog Posts</h1>
     </div>
-    <form method="GET" action="{{ url_for('routes.posts') }}" class="mb-4">
-        <div class="input-group">
-            <input type="text" name="search" class="form-control" placeholder="Search posts..." value="{{ request.args.get('search', '') }}">
-            <button class="btn btn-primary" type="submit">Search</button>
-        </div>
-    </form>
 
-    <div class="row row-cols-1 g-3">
+    <!-- Live Search Bar -->
+    <div class="mb-4">
+        <input
+            type="text"
+            id="search-bar"
+            class="form-control"
+            placeholder="Search posts..."
+        />
+    </div>
+
+    <div class="row row-cols-1 g-3" id="posts-list">
         {% for article in articles %}
-            <div class="col">
+            <div class="col post-item" data-title="{{ article.title|lower }}" data-content="{{ article.content|lower }}">
                 <a href="{{ url_for('routes.post', article_id=article.id) }}" class="text-decoration-none">
                     <div class="card shadow-sm">
                         <div class="card-body">

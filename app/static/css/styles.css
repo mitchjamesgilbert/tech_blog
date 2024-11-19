@@ -14,6 +14,10 @@
     );
 }
 
+body {
+    background-color: #000000;
+}
+
 .container-fluid {
     --bs-gutter-x: 0;
 }
@@ -90,3 +94,162 @@
     color: #00ff00;
     text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
 }
+
+/* Card styling */
+.card {
+    background-color: #1f1d1d; /* Match blog post background */
+    border: 1px solid #292828; /* Light border */
+    color: #bdc2bd; /* Light text */
+    position: relative; /* For separator lines if needed */
+    padding: 1rem;
+    margin: 1rem 0; /* Add space between cards */
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.3s ease;
+    border-radius: 5px; /* Slightly rounded corners */
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: scale(1.02); /* Subtle zoom on hover */
+    background-color: #111; /* Slightly lighter black on hover */
+    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.3); /* Subtle green outer glow */
+}
+
+/* Title styling for cards */
+.card-title {
+    color: #00ff00; /* Terminal green for titles */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem; /* Adjust title size */
+    margin-bottom: 0.5rem;
+}
+
+/* Content preview text styling */
+.card-text {
+    color: #bdc2bd; /* Light gray for content preview */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem; /* Smaller size for preview text */
+    line-height: 1.5;
+}
+
+/* Tags and metadata */
+.card-text strong {
+    color: #00ff00; /* Green for "Tags" and "Published" labels */
+}
+
+
+a.text-decoration-none {
+    text-decoration: none;
+}
+
+#search-bar::placeholder {
+    color: #3a3a3a; /* A muted gray */
+    text-shadow: none; /* Remove any shadow if it conflicts */
+    opacity: 1; /* Ensure full opacity */
+    font-style: italic; /* Optional: style for better visibility */
+}
+
+/* Admin container */
+.container {
+    max-width: 900px; /* Restrict width for better readability */
+    color: #bdc2bd; /* Light gray text */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Admin page heading */
+h1 {
+    color: #00ff00; /* Terminal green for the title */
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Admin buttons */
+.btn {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* New Post button */
+.btn-success {
+    background-color: #005f00; /* Dark green */
+    border-color: #00ff00;
+    color: #00ff00;
+}
+
+.btn-success:hover {
+    background-color: #00ff00;
+    color: #000;
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Logout button */
+.btn-danger {
+    background-color: #5f0000; /* Dark red */
+    border-color: #ff0000;
+    color: #ff0000;
+}
+
+.btn-danger:hover {
+    background-color: #ff0000;
+    color: #000;
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Edit button */
+.btn-warning {
+    background-color: #5f5f00; /* Dark yellow */
+    border-color: #ffff00;
+    color: #ffff00;
+}
+
+.btn-warning:hover {
+    background-color: #ffff00;
+    color: #000;
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* List group items */
+.list-group-item {
+    margin-bottom: 1.5rem; /* Increase vertical spacing between cards */
+    padding: 1rem; /* Ensure consistent padding within each card */
+    background-color: #1f1d1d; /* Match existing style */
+    border: 1px solid #292828; /* Keep the light border */
+    border-radius: 5px; /* Rounded corners */
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+
+.list-group-item:hover {
+    transform: scale(1.02); /* Subtle zoom on hover */
+    background-color: #111; /* Slightly lighter black */
+}
+
+/* Article title in the list */
+.list-group-item strong {
+    color: #00ff00; /* Terminal green */
+    font-size: 1.2rem;
+}
+
+/* Article content preview */
+.list-group-item p {
+    color: #bdc2bd; /* Light gray for preview text */
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Article metadata (date and tags) */
+.list-group-item small {
+    color: #808080; /* Muted gray for metadata */
+}
+
+/* Standardize button sizes for Edit and Delete */
+.list-group-item .btn-sm {
+    width: 80px; /* Set the same width for both buttons */
+    text-align: center; /* Center-align the text */
+    padding: 0.6rem 0.8rem; /* Adjust padding (top/bottom and left/right) */
+    margin-left: 10px; /* Add extra space from the left */
+    margin-top: 5px; /* Add space above the buttons */
+    margin-bottom: 5px; /* Add space below the buttons */
+}
+
