@@ -253,3 +253,27 @@ h1 {
     margin-bottom: 5px; /* Add space below the buttons */
 }
 
+/* Article Container */
+.article-container {
+    max-width: 1200px; /* Wider container */
+    margin: 0 auto; /* Center the container */
+    color: #bdc2bd; /* Light text */
+    font-family: 'Courier New', Courier, monospace; /* Terminal font */
+}
+
+/* Article Content Box */
+.article-content-box {
+    background-color: #1f1d1d; /* Match blog post background */
+    color: #bdc2bd; /* Light text for readability */
+    border: 1px solid #292828; /* Subtle border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5.5rem; /* Comfortable padding */
+}
+
+.article-content-box img {
+    max-width: 100%; /* Make images responsive */
+    height: auto;    /* Maintain aspect ratio */
+    display: block;  /* Center images horizontally */
+    margin: 20px auto; /* Add spacing around images */
+    border-radius: 8px; /* Optional: rounded corners */
+}

@@ -3,25 +3,18 @@
 {% block title %}{{ article.title }}{% endblock %}
 
 {% block content %}
-<div class="container mt-5" style="max-width: 800px; color: #bdc2bd; font-family: 'Courier New', Courier, monospace;">
+<div class="container mt-5 article-container">
     <!-- Article Title -->
     <h1 class="terminal-green-title mb-3">{{ article.title }}</h1>
 
     <!-- Publication Date -->
     <p class="text-muted">
-        <strong>Published on:</strong> {{ article.date_posted.strftime('%Y-%m-%d') }}
+        <strong>Published on:</strong> {{ article.date.strftime('%Y-%m-%d') }}
     </p>
 
-    <!-- Featured Image (Optional) -->
-    {% if article.image_url %}
-    <div class="mb-4 text-center">
-        <img src="{{ article.image_url }}" alt="{{ article.title }}" class="img-fluid rounded" style="max-width: 100%; border: 1px solid #292828;">
-    </div>
-    {% endif %}
-
     <!-- Article Content -->
-    <div class="border rounded p-3" style="background-color: #1f1d1d; color: #bdc2bd;">
-        <p>{{ article.content|safe }}</p>
+    <div class="article-content-box">
+        {{ article.content|safe }}
     </div>
 </div>
 {% endblock %}

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const text = "Te amo Laura!"; // Text to type out
+    const text = "Mitchell Gilbert"; // Text to type out
     const typingSpeed = 200; // Milliseconds per character
     const cursorBlinkSpeed = 500; // Milliseconds for cursor blink
 

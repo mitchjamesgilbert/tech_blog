@@ -15,6 +15,7 @@
         text-decoration: none;
     }
 </style>
+
 <div class="container mt-5" style="max-width: 800px;">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="terminal-green-title">Blog Posts</h1>
@@ -32,8 +33,10 @@
 
     <div class="row row-cols-1 g-3" id="posts-list">
         {% for article in articles %}
-            <div class="col post-item" data-title="{{ article.title|lower }}" data-content="{{ article.content|lower }}">
-                <a href="{{ url_for('routes.post', article_id=article.id) }}" class="text-decoration-none">
+            <div class="col post-item" 
+                 data-title="{{ article.title|lower }}" 
+                 data-content="{{ article.content|lower }}">
+                <a href="{{ url_for('routes.post', filename=article.filename) }}" class="text-decoration-none">
                     <div class="card shadow-sm">
                         <div class="card-body">
                             <h5 class="card-title text-primary">{{ article.title }}</h5>
@@ -41,12 +44,12 @@
                                 {{ article.content[:200] }}...
                             </p>
                             <p class="card-text small text-muted">
-                                <strong>Published:</strong> {{ article.date_posted.strftime('%Y-%m-%d') }}
+                                <strong>Published:</strong> {{ article.date.strftime('%Y-%m-%d') }}
                             </p>
                             <p class="card-text">
                                 <strong>Tags:</strong> 
-                                {% if article.get_tags() %}
-                                    {{ ', '.join(article.get_tags()) }}
+                                {% if article.tags %}
+                                    {{ ', '.join(article.tags) }}
                                 {% else %}
                                     No tags
                                 {% endif %}
@@ -58,4 +61,24 @@
         {% endfor %}
     </div>
 </div>
+
+<script>
+    // Live Search Functionality
+    const searchBar = document.getElementById('search-bar');
+    const postsList = document.getElementById('posts-list');
+    const posts = document.querySelectorAll('.post-item');
+
+    searchBar.addEventListener('input', () => {
+        const query = searchBar.value.toLowerCase();
+        posts.forEach(post => {
+            const title = post.getAttribute('data-title');
+            const content = post.getAttribute('data-content');
+            if (title.includes(query) || content.includes(query)) {
+                post.style.display = '';
+            } else {
+                post.style.display = 'none';
+            }
+        });
+    });
+</script>
 {% endblock %}
